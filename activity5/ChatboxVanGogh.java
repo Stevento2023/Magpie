@@ -22,7 +22,7 @@ public class ChatboxVanGogh
      */    
     public String getGreeting()
     {
-        return "Hello, let's talk.";
+        return "Greeting, I suppose.";
     }
 
     /**
@@ -37,7 +37,7 @@ public class ChatboxVanGogh
         String response = "";
         if (statement.length() == 0)
         {
-            response = "Say something, please.";
+            response = "Say something, won't ya.";
         }
 
         else if (findKeyword(statement, "no") >= 0)
@@ -57,14 +57,15 @@ public class ChatboxVanGogh
         {
             response = "Tell me more about your pets.";
         }
-        else if (statement.indexOf("Jaffe") >= 0)
-        {
-            response = "That man is lit!";
-        }
         else if (statement.indexOf("Mr. Jaffe") >= 0)
         {
-            response = "He sounds like an excellent teacher!";
+            response = "He sounds like an excellent teacher! You know I was once a techer too.";
         }
+        else if (statement.indexOf("famous") >=0)
+        {
+            response = "I painted over 900 art pieces. I suppose I am famous.";
+        }
+        
         // Responses which require transformations
         else if (findKeyword(statement, "I want to", 0) >= 0)
         {
@@ -78,7 +79,6 @@ public class ChatboxVanGogh
 
         else
         {
-
             // Look for a two word (you <something> me)
             // pattern
             int psn = findKeyword(statement, "you", 0);
