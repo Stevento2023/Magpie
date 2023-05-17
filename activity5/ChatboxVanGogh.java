@@ -35,11 +35,16 @@ public class ChatboxVanGogh
     public String getResponse(String statement)
     {
         String response = "";
+        
         if (statement.length() == 0)
         {
             response = "Say something, won't ya.";
         }
-
+        else if (findKeyword(statement, "name") >= 0)
+        {
+            response = "My name is Vincent Van Gogh. A Dutch Post-Impressionist painter.";
+        }
+        
         else if (findKeyword(statement, "no") >= 0)
         {
             response = "Why so negative?";
@@ -49,7 +54,7 @@ public class ChatboxVanGogh
         || findKeyword(statement, "sister") >= 0
         || findKeyword(statement, "brother") >= 0)
         {
-            response = "Tell me more about your family.";
+            response = "Talk to me about your family.";
         }
         else if (statement.indexOf("dog") >= 0
                 || statement.indexOf("cat") >=0
@@ -61,9 +66,12 @@ public class ChatboxVanGogh
         {
             response = "He sounds like an excellent teacher! You know I was once a techer too.";
         }
-        else if (statement.indexOf("famous") >=0)
+        else if (statement.indexOf("you famous") >=0)
         {
-            response = "I painted over 900 art pieces. I suppose I am famous.";
+            String R1 = "One of my most famous paintings is Starry Night.";
+            response = "I have painted over 900 art pieces. And many appreciate my vitality of my works. ";
+            return response;
+            //response = "One of my most famous paintings is Starry Night.";
         }
         
         // Responses which require transformations
@@ -277,7 +285,5 @@ public class ChatboxVanGogh
             "Do you really think so?",
             "You don't say.",
             "Interesting, tell me more.",
-            "For real? What else?",
-            "Whatever you say Yus."
         };
 }
