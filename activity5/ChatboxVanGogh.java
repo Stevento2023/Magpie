@@ -42,19 +42,26 @@ public class ChatboxVanGogh
         }
         else if (findKeyword(statement, "name") >= 0)
         {
-            response = "My name is Vincent Van Gogh. A Dutch Post-Impressionist painter.";
+            response = "My name is Vincent Van Gogh. I'm a Dutch Post-Impressionist painter.";
         }
-        
+        else if (statement.indexOf("job") >= 0
+            || statement.indexOf("occupation") >= 0)
+        {
+            response = "I was a painter and sold my art works. But I was also a language teacher.";
+        }
         else if (findKeyword(statement, "no") >= 0)
         {
             response = "Why so negative?";
         }
         else if (findKeyword(statement, "mother") >= 0
-        || findKeyword(statement, "father") >= 0
-        || findKeyword(statement, "sister") >= 0
+        || findKeyword(statement, "father") >= 0)
+        {
+            response = "I had a rough relationship with my parents.";
+        }
+        else if (findKeyword(statement, "sister") >= 0
         || findKeyword(statement, "brother") >= 0)
         {
-            response = "Talk to me about your family.";
+            response = "I had 5 siblings, I loved them.";
         }
         else if (statement.indexOf("dog") >= 0
                 || statement.indexOf("cat") >=0
@@ -72,6 +79,17 @@ public class ChatboxVanGogh
             response = "I have painted over 900 art pieces. And many appreciate my vitality of my works. ";
             return response;
             //response = "One of my most famous paintings is Starry Night.";
+        }
+        else if (statement.indexOf("you married") >= 0
+            || statement.indexOf("family") >= 0
+            || statement.indexOf("children") >= 0)
+        {
+            response = "I don't have my own family. I don't have any wife or children.";
+        }
+        else if (statement.indexOf("you live") >= 0
+            || statement.indexOf("you born") >= 0)
+        {
+            response = "I was born and lived in Zundert, Netherlands.";
         }
         
         // Responses which require transformations
