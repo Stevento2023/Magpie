@@ -102,6 +102,10 @@ public class ChatboxVanGogh
         {
             response = transformIWantStatement(statement);
         }
+        else if (statement.indexOf("color") >= 0)
+        {
+            response = "My favorite color is yellow.";
+        }
 
         else
         {
